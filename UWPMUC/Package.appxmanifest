@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:uap7="http://schemas.microsoft.com/appx/manifest/uap/windows10/7"
-         xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3" IgnorableNamespaces="uap mp uap3">
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:uap7="http://schemas.microsoft.com/appx/manifest/uap/windows10/7" xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3" IgnorableNamespaces="uap mp uap3 rescap">
   <Identity Name="380c3bfd-13a0-4531-bf1b-580dcbb5bfd5" Publisher="CN=hanne" Version="1.0.0.0" />
   <mp:PhoneIdentity PhoneProductId="380c3bfd-13a0-4531-bf1b-580dcbb5bfd5" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
@@ -21,12 +20,23 @@
         </uap:DefaultTile>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
       </uap:VisualElements>
+      <Extensions>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap:FileTypeAssociation Name=".jpg">
+            <uap:DisplayName>jpg</uap:DisplayName>
+            <uap:SupportedFileTypes>
+              <uap:FileType>.jpg</uap:FileType>
+            </uap:SupportedFileTypes>
+          </uap:FileTypeAssociation>
+        </uap:Extension>
+      </Extensions>
     </Application>
   </Applications>
   <Capabilities>
     <Capability Name="internetClient" />
     <uap3:Capability Name="backgroundMediaPlayback" />
-    <uap7:Capability Name="globalMediaControl"/>
+    <uap:Capability Name="picturesLibrary" />
+    <uap:Capability Name="removableStorage" />
     <DeviceCapability Name="lowLevel" />
   </Capabilities>
 </Package>
