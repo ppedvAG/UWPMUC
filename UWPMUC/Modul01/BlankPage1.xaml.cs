@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -26,6 +27,16 @@ namespace UWPMUC.Modul01
         {
             this.InitializeComponent();
             //kommentr
+
+        }
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            var fo = KnownFolders.PicturesLibrary;
+            var p = fo.GetFilesAsync();
+            var ap = ApplicationData.Current.LocalFolder;
+            File.WriteAllText(@"c:\temp\hannes.txt","test");
+
         }
     }
 }
