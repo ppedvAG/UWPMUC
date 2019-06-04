@@ -38,5 +38,6 @@
     <uap:Capability Name="picturesLibrary" />
     <uap:Capability Name="removableStorage" />
     <DeviceCapability Name="lowLevel" />
+    <DeviceCapability Name="location" />
   </Capabilities>
 </Package>
