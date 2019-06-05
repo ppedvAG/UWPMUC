@@ -12,7 +12,7 @@
         <TextBox HorizontalAlignment="Left"
                  PlaceholderText="Hier kommt was rein" InputScope="DateDayNumber"
                  VerticalAlignment="Top"/>
-        <CalendarDatePicker Margin="0,50,0,0"  Header="Datum" 
+        <CalendarDatePicker Margin="0,50,0,0"  Header="Datum"  
                             />
         <TimePicker Margin="0,200,0,0" />
       
