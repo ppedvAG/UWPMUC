@@ -1,0 +1,21 @@
+﻿<Page
+    x:Class="UWPMUC.Modul05.BlankPage6"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UWPMUC.Modul05"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="182,166,0,0" VerticalAlignment="Top">
+            <Button.Transitions>
+                <TransitionCollection>
+                    <EntranceThemeTransition FromHorizontalOffset="0" ></EntranceThemeTransition>
+                </TransitionCollection> 
+            </Button.Transitions>
+        </Button>
+
+    </Grid>
+</Page>
