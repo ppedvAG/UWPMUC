@@ -9,7 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid Loaded="Grid_Loaded">
-        <TextBlock Name="text1"></TextBlock>
+        <TextBox Name="text1"></TextBox>
 
     </Grid>
 </Page>
