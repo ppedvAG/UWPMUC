@@ -6,7 +6,7 @@
          
          
         
-         xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3" IgnorableNamespaces="uap mp uap3 uap5 rescap">
+         xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3" IgnorableNamespaces="uap mp uap3">
   <Identity Name="380c3bfd-13a0-4531-bf1b-580dcbb5bfd5" Publisher="CN=hanne" Version="1.0.0.0" />
   <mp:PhoneIdentity PhoneProductId="380c3bfd-13a0-4531-bf1b-580dcbb5bfd5" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
@@ -44,8 +44,7 @@
     <uap3:Capability Name="backgroundMediaPlayback" />
     <uap:Capability Name="picturesLibrary" />
     <uap:Capability Name="removableStorage" />
-    <rescap:Capability Name="broadFileSystemAccess" />
-
+ 
     <DeviceCapability Name="lowLevel" />
     <DeviceCapability Name="location" />
     
