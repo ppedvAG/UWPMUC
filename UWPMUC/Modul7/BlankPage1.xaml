@@ -7,6 +7,15 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.BottomAppBar>
+        <CommandBar>
+            <CommandBar.Content>
+                <Grid/>
+            </CommandBar.Content>
+            
+            <AppBarButton Icon="Refresh" Label="Load Data" Click="AppBarButton_Click"/>
+        </CommandBar>
+    </Page.BottomAppBar>
 
     <Grid>
 
