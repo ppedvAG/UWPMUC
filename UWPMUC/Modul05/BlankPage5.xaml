@@ -1,0 +1,35 @@
+﻿<Page
+    x:Class="UWPMUC.Modul05.BlankPage5"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UWPMUC.Modul05"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <Storyboard x:Name="Storyboard1">
+            <DoubleAnimation Duration="00:00:01" Storyboard.TargetName="ellipse" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" To="812">
+                <DoubleAnimation.EasingFunction>
+                    <BounceEase EasingMode="EaseOut"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <PointAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetName="ellipse" Storyboard.TargetProperty="(UIElement.RenderTransformOrigin)">
+                <EasingPointKeyFrame KeyTime="00:00:01" Value="0.712,0.83">
+                    <EasingPointKeyFrame.EasingFunction>
+                        <BounceEase EasingMode="EaseOut"/>
+                    </EasingPointKeyFrame.EasingFunction>
+                </EasingPointKeyFrame>
+            </PointAnimationUsingKeyFrames>
+        </Storyboard>
+    </Page.Resources>
+
+    <Grid>
+        <Ellipse x:Name="ellipse" Height="168" Margin="503,10,830,822" Width="167" Fill="Black" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <CompositeTransform/>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+
+    </Grid>
+</Page>
