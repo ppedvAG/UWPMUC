@@ -7,17 +7,33 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+   
     <Page.BottomAppBar>
         <CommandBar>
             <CommandBar.Content>
                 <Grid/>
             </CommandBar.Content>
-            
+
             <AppBarButton Icon="Refresh" Label="Load Data" Click="AppBarButton_Click"/>
         </CommandBar>
     </Page.BottomAppBar>
 
     <Grid>
+        <ListView Name="Liste1" HorizontalAlignment="Left" Height="426" VerticalAlignment="Top" Width="874">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <CheckBox IsChecked="{Binding Done}" Grid.Column="0"></CheckBox>
+                        <TextBlock Text="{Binding Aufgabe}" Grid.Column="0" Margin="40,0,0,0"></TextBlock>
+                        <TextBlock Text="{Binding Termin}" Grid.Column="1"></TextBlock>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
 
     </Grid>
 </Page>

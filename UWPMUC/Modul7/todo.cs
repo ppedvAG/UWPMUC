@@ -20,13 +20,13 @@ namespace UWPMUC.Modul06
 
         private string bearbeiterField;
 
-        private System.DateTime datumField;
+        private System.DateTime? datumField;
 
         private bool doneField;
 
         private byte idField;
 
-        private System.DateTime terminField;
+        private System.DateTime? terminField;
 
         /// <remarks/>
         public string Aufgabe
@@ -55,7 +55,7 @@ namespace UWPMUC.Modul06
         }
 
         /// <remarks/>
-        public System.DateTime Datum
+        public System.DateTime? Datum
         {
             get
             {
@@ -94,7 +94,7 @@ namespace UWPMUC.Modul06
         }
 
         /// <remarks/>
-        public System.DateTime Termin
+        public System.DateTime? Termin
         {
             get
             {
