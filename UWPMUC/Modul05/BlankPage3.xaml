@@ -8,21 +8,8 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Page.Resources>
-        <Style x:Key="CheckBoxStyle1" TargetType="CheckBox">
-            <Setter Property="Background" Value="{ThemeResource CheckBoxBackgroundUnchecked}"/>
-            <Setter Property="Foreground" Value="{ThemeResource CheckBoxForegroundUnchecked}"/>
-            <Setter Property="BorderBrush" Value="{ThemeResource CheckBoxBorderBrushUnchecked}"/>
-            <Setter Property="Padding" Value="8,5,0,0"/>
-            <Setter Property="HorizontalAlignment" Value="Left"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="HorizontalContentAlignment" Value="Left"/>
-            <Setter Property="VerticalContentAlignment" Value="Top"/>
-            <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
-            <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"/>
-            <Setter Property="MinWidth" Value="120"/>
-            <Setter Property="MinHeight" Value="32"/>
-            <Setter Property="UseSystemFocusVisuals" Value="{StaticResource UseSystemFocusVisuals}"/>
-            <Setter Property="FocusVisualMargin" Value="-7,-3,-7,-3"/>
+        <Style TargetType="CheckBox">
+          
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="CheckBox">
@@ -338,7 +325,7 @@
     </Page.Resources>
 
     <Grid>
-        <CheckBox Style="{StaticResource CheckBoxStyle1}" Content="CheckBox" HorizontalAlignment="Left" Margin="37,35,0,0" VerticalAlignment="Top"/>
+        <CheckBox Content="CheckBox" HorizontalAlignment="Left" Margin="37,35,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>
