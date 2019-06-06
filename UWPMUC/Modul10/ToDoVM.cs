@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using UWPMUC.Modul06;
+using WebApplication1;
 
 namespace UWPMUC.Modul10
 {
@@ -40,7 +41,20 @@ namespace UWPMUC.Modul10
         public ICommand SaveNeuCommand => new DelegateCommand(SaveNeuTodo);
         public void SaveNeuTodo()
         {
-            NeuToDo.Id++;
+            var ef = new Model1();
+            NeuToDo.Datum = DateTime.Now;
+            if (ef.ToDo.Count() > 0)
+            {
+                var max = ef.ToDo.Max(x => x.Id);
+                NeuToDo.Id = max + 1;
+               
+            }
+            else NeuToDo.Id = 1;
+
+
+            ef.ToDo.Add(NeuToDo);
+            ef.SaveChanges();
+
         }
 
     }
