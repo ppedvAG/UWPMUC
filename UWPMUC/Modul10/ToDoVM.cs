@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -20,8 +21,11 @@ namespace UWPMUC.Modul10
                 ID = 100;
             }
             _NeuToDo = new ToDo();
+            ToDoListe = new ObservableCollection<ToDo>();
             
         }
+        public ObservableCollection<ToDo> ToDoListe { get; set; }
+
         public int ID { get; set; }
 
         private ToDo _NeuToDo;
@@ -35,9 +39,25 @@ namespace UWPMUC.Modul10
         public ToDo NeuToDo
         {
             get { return _NeuToDo; }
-            set { _NeuToDo = value; }
+            set { _NeuToDo = value;
+                RaisePropertyChanged();
+            }
         }
-        
+        public ICommand LoadCommand => new DelegateCommand(LoadTodo);
+        public void LoadTodo()
+        {
+            var ef = new Model1();
+           
+            foreach (var item in ef.ToDo)
+            {
+                ToDoListe.Add(item);
+
+            }
+
+
+        }
+
+
         public ICommand SaveNeuCommand => new DelegateCommand(SaveNeuTodo);
         public void SaveNeuTodo()
         {
@@ -54,6 +74,9 @@ namespace UWPMUC.Modul10
 
             ef.ToDo.Add(NeuToDo);
             ef.SaveChanges();
+            ToDoListe.Add(NeuToDo);
+            
+            NeuToDo = new ToDo();
 
         }
 

@@ -5,6 +5,7 @@
     xmlns:local="using:UWPMUC.Modul10"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:modul06="using:UWPMUC.Modul06"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Page.DataContext>
@@ -17,7 +18,7 @@
                 <Grid/>
             </CommandBar.Content>
             <AppBarButton Icon="Add" Label="Add DoTO" Command="{Binding SaveNeuCommand}"/>
-            <AppBarButton Icon="Cancel" Label="AppBarButton"/>
+            <AppBarButton Icon="Refresh"     Label="Laden" Command="{Binding LoadCommand}"/>
         </CommandBar>
     </Page.BottomAppBar>
 
@@ -26,16 +27,23 @@
             <ColumnDefinition Width="1303*"/>
             <ColumnDefinition Width="617*"/>
         </Grid.ColumnDefinitions>
-          <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" Text="Neues ToDo" 
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" Text="Neues ToDo" 
                    FontSize="24"
-                   TextWrapping="Wrap" VerticalAlignment="Top"/>    
+                   TextWrapping="Wrap" VerticalAlignment="Top"/>
         <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="10,117,0,0" 
-                 Text="{Binding NeuToDo.Aufgabe}" VerticalAlignment="Top" Height="44" Width="365"/>
-  
+                 Text="{Binding NeuToDo.Aufgabe,Mode=TwoWay}" VerticalAlignment="Top" Height="44" Width="365"/>
         <DatePicker Grid.Column="1" HorizontalAlignment="Left" Margin="10,232,0,0" 
                     Header="Fertig bis"
-                    Date="{Binding NeuToDo.Termin}"
+                    Date="{Binding NeuToDo.Termin,Mode=TwoWay}"
                     VerticalAlignment="Top"/>
+        <ListView HorizontalAlignment="Left" Height="992" Margin="65,42,0,0" VerticalAlignment="Top" Width="812" 
+                  ItemsSource="{Binding ToDoListe}">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="modul06:ToDo">
+                    <TextBlock Text="{Binding Aufgabe}"></TextBlock>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
 
     </Grid>
 </Page>
