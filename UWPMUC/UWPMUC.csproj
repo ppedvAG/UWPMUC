@@ -179,6 +179,7 @@
     <Compile Include="Modul10\BlankPage4.xaml.cs">
       <DependentUpon>BlankPage4.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Modul10\DateTimeConverter.cs" />
     <Compile Include="Modul10\ToDoVM.cs" />
     <Compile Include="Modul10\ToDoVMCompiled.cs" />
     <Compile Include="Modul7\BlankPage1.xaml.cs">

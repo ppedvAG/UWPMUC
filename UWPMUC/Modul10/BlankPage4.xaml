@@ -8,6 +8,9 @@
     xmlns:modul06="using:UWPMUC.Modul06"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <local:DateTimeConverter x:Key="conv1"></local:DateTimeConverter>
+    </Page.Resources>
     <Page.BottomAppBar>
         <CommandBar>
             <CommandBar.Content>
@@ -30,10 +33,10 @@
                  Text="{x:Bind MyVM.NeuToDo.Aufgabe,Mode=TwoWay}" VerticalAlignment="Top" Height="44" Width="365"/>
         <DatePicker Grid.Column="1" HorizontalAlignment="Left" Margin="10,232,0,0" 
                     Header="Fertig bis"
-                    Date="{x:Bind MyVM.NeuToDo.Termin,Mode=TwoWay}"
+                    Date="{x:Bind MyVM.NeuToDo.Termin,Mode=TwoWay,Converter={StaticResource conv1 }}"
                     VerticalAlignment="Top"/>
         <ListView HorizontalAlignment="Left" Height="992" Margin="65,42,0,0" VerticalAlignment="Top" Width="812" 
-                  ItemsSource="{Binding ToDoListe}">
+                  ItemsSource="{x:Bind MyVM.ToDoListe}">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="modul06:ToDo">
                     <TextBlock Text="{x:Bind Aufgabe,Mode=OneWay}"></TextBlock>
