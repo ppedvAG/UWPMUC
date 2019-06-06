@@ -52,10 +52,12 @@ namespace UWPMUC.Modul10
 
 
         }
+        public void CheckedTodo()
+        {
+        }
 
 
-       
-        public void SaveNeuTodo()
+            public void SaveNeuTodo()
         {
             var ef = new Model1();
             NeuToDo.Datum = DateTime.Now;

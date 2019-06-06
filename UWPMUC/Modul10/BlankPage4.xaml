@@ -39,7 +39,11 @@
                   ItemsSource="{x:Bind MyVM.ToDoListe}">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="modul06:ToDo">
-                    <TextBlock Text="{x:Bind Aufgabe,Mode=OneWay}"></TextBlock>
+                    <Grid>
+                        <CheckBox IsChecked="{x:Bind Done,Mode=TwoWay}" 
+                                  Click="CheckBox_Click" Tag="{x:Bind Id}" ></CheckBox>
+                        <TextBlock Text="{x:Bind Aufgabe,Mode=OneWay}" Margin="50,0,0,0" HorizontalAlignment="Left"></TextBlock>
+                    </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

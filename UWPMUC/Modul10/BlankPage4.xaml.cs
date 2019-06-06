@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using WebApplication1;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -26,6 +27,22 @@ namespace UWPMUC.Modul10
         public BlankPage4()
         {
             this.InitializeComponent();
+        }
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CheckBox_Click(object sender, RoutedEventArgs e)
+        {
+            int id =int.Parse( ((CheckBox)sender).Tag.ToString());
+            var item = MyVM.ToDoListe.Where(x => x.Id == id).First();
+            MyVM.ToDoListe.Remove(item);
+
+            var ef = new Model1();
+            ef.ToDo.Remove(item);
+            ef.SaveChanges();
         }
     }
 }
