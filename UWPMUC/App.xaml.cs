@@ -101,5 +101,7 @@ namespace UWPMUC
             //TODO: Anwendungszustand speichern und alle Hintergrundaktivitäten beenden
             deferral.Complete();
         }
+
+
     }
 }
