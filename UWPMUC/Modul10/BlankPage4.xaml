@@ -1,0 +1,45 @@
+﻿<Page
+    x:Class="UWPMUC.Modul10.BlankPage4"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UWPMUC.Modul10"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:modul06="using:UWPMUC.Modul06"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.BottomAppBar>
+        <CommandBar>
+            <CommandBar.Content>
+                <Grid/>
+            </CommandBar.Content>
+            <AppBarButton Icon="Add" Label="Add DoTO" Click="{x:Bind MyVM.SaveNeuTodo}"/>
+            <AppBarButton Icon="Refresh" Label="Laden" Click="{x:Bind MyVM.LoadTodo}"/>
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1303*"/>
+            <ColumnDefinition Width="617*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" Text="Neues ToDo" 
+                   FontSize="24"
+                   TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="10,117,0,0" 
+                 Text="{x:Bind MyVM.NeuToDo.Aufgabe,Mode=TwoWay}" VerticalAlignment="Top" Height="44" Width="365"/>
+        <DatePicker Grid.Column="1" HorizontalAlignment="Left" Margin="10,232,0,0" 
+                    Header="Fertig bis"
+                    Date="{x:Bind MyVM.NeuToDo.Termin,Mode=TwoWay}"
+                    VerticalAlignment="Top"/>
+        <ListView HorizontalAlignment="Left" Height="992" Margin="65,42,0,0" VerticalAlignment="Top" Width="812" 
+                  ItemsSource="{Binding ToDoListe}">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="modul06:ToDo">
+                    <TextBlock Text="{x:Bind Aufgabe,Mode=OneWay}"></TextBlock>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </Grid>
+</Page>
