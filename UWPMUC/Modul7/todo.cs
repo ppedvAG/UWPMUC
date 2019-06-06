@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,7 +15,7 @@ namespace UWPMUC.Modul06
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "", IsNullable = false)]
-    public partial class ToDo
+    public partial class ToDo:INotifyPropertyChanged
     {
 
         private string aufgabeField;
@@ -90,6 +92,7 @@ namespace UWPMUC.Modul06
             set
             {
                 this.idField = value;
+                RaisePropertyChanged();
             }
         }
 
@@ -104,6 +107,12 @@ namespace UWPMUC.Modul06
             {
                 this.terminField = value;
             }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void RaisePropertyChanged([CallerMemberName] string propertyName = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 

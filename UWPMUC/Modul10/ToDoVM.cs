@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -8,7 +10,7 @@ using UWPMUC.Modul06;
 
 namespace UWPMUC.Modul10
 {
-    class ToDoVM
+    class ToDoVM:INotifyPropertyChanged
     {
         public ToDoVM()
         {
@@ -16,11 +18,18 @@ namespace UWPMUC.Modul10
             {
                 ID = 100;
             }
+            _NeuToDo = new ToDo();
             
         }
         public int ID { get; set; }
 
         private ToDo _NeuToDo;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void RaisePropertyChanged([CallerMemberName] string propertyName = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
         public ToDo NeuToDo
         {
@@ -31,7 +40,7 @@ namespace UWPMUC.Modul10
         public ICommand SaveNeuCommand => new DelegateCommand(SaveNeuTodo);
         public void SaveNeuTodo()
         {
-
+            NeuToDo.Id++;
         }
 
     }

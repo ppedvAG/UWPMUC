@@ -9,15 +9,19 @@
     
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Page.DataContext>
-        <local:ToDoVM ></local:ToDoVM> 
+        <local:ToDoVM ></local:ToDoVM>
     </Page.DataContext>
 
     <Grid>
         <Button Content="Button" HorizontalAlignment="Left"
                 Command="{Binding SaveNeuCommand}"
-                VerticalAlignment="Top"/>
+                VerticalAlignment="Top" Margin="10,67,0,0"/>
         <TextBox HorizontalAlignment="Left" Margin="31,121,0,0" 
                  Text="{Binding ID}" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left"
+                 
+                 Margin="174,72,0,0" Text="{Binding NeuToDo.Id ,Mode=TwoWay}" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="273,85,0,0" Text="{Binding NeuToDo.Id}" TextWrapping="Wrap" VerticalAlignment="Top" Width="83"/>
 
     </Grid>
 </Page>
