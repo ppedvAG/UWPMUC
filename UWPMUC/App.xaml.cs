@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using WebApplication1;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
@@ -30,6 +31,10 @@ namespace UWPMUC
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            using (var db=new Model1())
+            {
+                db.Database.EnsureCreated();
+            }
         }
 
         /// <summary>
