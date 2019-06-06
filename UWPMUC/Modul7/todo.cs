@@ -24,7 +24,7 @@ namespace UWPMUC.Modul06
 
         private bool doneField;
 
-        private byte idField;
+        private int idField;
 
         private System.DateTime? terminField;
 
@@ -81,7 +81,7 @@ namespace UWPMUC.Modul06
         }
 
         /// <remarks/>
-        public byte Id
+        public int Id
         {
             get
             {

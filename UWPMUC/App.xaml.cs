@@ -71,7 +71,7 @@ namespace UWPMUC
                     // Wenn der Navigationsstapel nicht wiederhergestellt wird, zur ersten Seite navigieren
                     // und die neue Seite konfigurieren, indem die erforderlichen Informationen als Navigationsparameter
                     // übergeben werden
-                    rootFrame.Navigate(typeof(Modul7.BlankPage1), e.Arguments);
+                    rootFrame.Navigate(typeof(Modul7.BlankPage3), e.Arguments);
                 }
                 // Sicherstellen, dass das aktuelle Fenster aktiv ist
                 Window.Current.Activate();
