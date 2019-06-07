@@ -113,5 +113,13 @@ namespace UWPMUC
             }
             base.OnActivated(args);
         }
+
+        protected override void OnFileActivated(FileActivatedEventArgs args)
+        {
+            base.OnFileActivated(args);
+            Frame rootFrame = Window.Current.Content as Frame;
+            var a = args as FileActivatedEventArgs;
+            rootFrame.Navigate(typeof(Modul13.BlankPage1), a.Files.First().Name);
+        }
     }
 }

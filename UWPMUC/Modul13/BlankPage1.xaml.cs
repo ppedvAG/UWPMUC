@@ -36,6 +36,7 @@ namespace UWPMUC.Modul13
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            
              Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-webcam"));
         }
     }
