@@ -6,6 +6,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using WebApplication1;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -48,6 +49,12 @@ namespace UWPMUC.Modul10
             var ef = new Model1();
             ef.ToDo.Remove(item);
             ef.SaveChanges();
+        }
+
+        private void RefreshContainer_RefreshRequested(RefreshContainer sender, RefreshRequestedEventArgs args)
+        {
+            var dlg = new MessageDialog("Hallo");
+            dlg.ShowAsync();
         }
     }
 }
