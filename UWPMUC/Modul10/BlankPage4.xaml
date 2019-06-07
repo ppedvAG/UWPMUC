@@ -36,7 +36,9 @@
                     Date="{x:Bind MyVM.NeuToDo.Termin,Mode=TwoWay,Converter={StaticResource conv1 }}"
                     VerticalAlignment="Top"/>
         <ListView HorizontalAlignment="Left" Height="992" Margin="65,42,0,0" VerticalAlignment="Top" Width="812" 
-                  ItemsSource="{x:Bind MyVM.ToDoListe}">
+                  ItemsSource="{x:Bind MyVM.ToDoListe}"
+                  
+                  >
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="modul06:ToDo">
                     <Grid>

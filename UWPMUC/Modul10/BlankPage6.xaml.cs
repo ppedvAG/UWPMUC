@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices.WindowsRuntime;
-using WebApplication1;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -21,33 +22,35 @@ namespace UWPMUC.Modul10
     /// <summary>
     /// Eine leere Seite, die eigenständig verwendet oder zu der innerhalb eines Rahmens navigiert werden kann.
     /// </summary>
-    public sealed partial class BlankPage5 : Page
+    public sealed partial class BlankPage6 : Page
     {
-        public ToDoVMCompiled MyVM { get; set; } = new ToDoVMCompiled();
-
-        public BlankPage5()
+       
+        public MyClass MyProp { get; set; }
+        public BlankPage6()
         {
             this.InitializeComponent();
-        }
-
-        private void SwipeItem_Invoked(SwipeItem sender, SwipeItemInvokedEventArgs args)
-        {
-
-        }
-
-        private void SwipeItem_Invoked_1(SwipeItem sender, SwipeItemInvokedEventArgs args)
-        {
-
-        }
-        private void CheckBox_Click(object sender, RoutedEventArgs e)
-        {
-            int id = int.Parse(((CheckBox)sender).Tag.ToString());
-            var item = MyVM.ToDoListe.Where(x => x.Id == id).First();
-            MyVM.ToDoListe.Remove(item);
-
-            var ef = new Model1();
-            ef.ToDo.Remove(item);
-            ef.SaveChanges();
+            //this.Bindings.Update(); auch onetime
         }
     }
+    public class MyClass 
+    {
+        private DateTime? _Datum;
+
+        public DateTime? Datum
+        {
+            get { return _Datum; }
+            set { _Datum = value; }
+        }
+        public DateTimeOffset GetDatum()
+        {
+            return new DateTimeOffset(Datum.Value);
+        }
+        public void SetDatum(DateTimeOffset datum)
+        {
+            Datum = datum.DateTime;
+        }
+
+
+    }
+
 }
