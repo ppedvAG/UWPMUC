@@ -42,6 +42,7 @@
     <uap:Capability Name="picturesLibrary" />
     <uap:Capability Name="removableStorage" />
     <uap3:Capability Name="userNotificationListener" />
+    <uap:Capability Name="userAccountInformation" />
     <DeviceCapability Name="lowLevel" />
     <DeviceCapability Name="location" />
   </Capabilities>
