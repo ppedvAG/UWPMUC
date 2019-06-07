@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UWPMUC.Modul06;
 using WebApplication1;
+using Windows.UI.Xaml.Input;
 
 namespace UWPMUC.Modul10
 {
@@ -59,6 +60,7 @@ namespace UWPMUC.Modul10
 
             public void SaveNeuTodo()
         {
+            var ret=FocusManager.TryMoveFocus(FocusNavigationDirection.Next);
             var ef = new Model1();
             NeuToDo.Datum = DateTime.Now;
             if (ef.ToDo.Count() > 0)

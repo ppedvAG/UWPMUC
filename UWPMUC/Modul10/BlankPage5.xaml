@@ -124,7 +124,7 @@
             <CommandBar.Content>
                 <Grid/>
             </CommandBar.Content>
-            <AppBarButton Icon="Add" Label="Add DoTO" Click="{x:Bind MyVM.SaveNeuTodo}"/>
+            <AppBarButton Icon="Add" Label="Add DoTO" Click="{x:Bind MyVM.SaveNeuTodo}" AllowFocusOnInteraction="True"/>
             <AppBarButton Icon="Refresh" Label="Laden" Click="{x:Bind MyVM.LoadTodo}"/>
         </CommandBar>
     </Page.BottomAppBar>
