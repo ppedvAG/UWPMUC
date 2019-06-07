@@ -102,6 +102,16 @@ namespace UWPMUC
             deferral.Complete();
         }
 
-
+        protected override void OnActivated(IActivatedEventArgs args)
+        {
+            if (args.Kind==ActivationKind.Protocol)
+            {
+                Frame rootFrame = Window.Current.Content as Frame;
+                var a = args as ProtocolActivatedEventArgs;
+                
+                rootFrame.Navigate(typeof(Modul13.BlankPage1), a.Uri.Query);
+            }
+            base.OnActivated(args);
+        }
     }
 }
