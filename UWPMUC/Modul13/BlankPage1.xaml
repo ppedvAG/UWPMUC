@@ -12,6 +12,7 @@
         <TextBlock
             Name="text1"
             HorizontalAlignment="Left" Margin="218,109,0,0" Text="Protokolmapping ppedv" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Button_Click"/>
 
     </Grid>
 </Page>

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -31,6 +32,11 @@ namespace UWPMUC.Modul13
         {
             text1.Text += e.Parameter.ToString();
             base.OnNavigatedTo(e);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+             Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-webcam"));
         }
     }
 }
