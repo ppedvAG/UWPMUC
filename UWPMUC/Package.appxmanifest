@@ -37,6 +37,7 @@
     <uap3:Capability Name="backgroundMediaPlayback" />
     <uap:Capability Name="picturesLibrary" />
     <uap:Capability Name="removableStorage" />
+    <uap3:Capability Name="userNotificationListener" />
     <DeviceCapability Name="lowLevel" />
     <DeviceCapability Name="location" />
   </Capabilities>
