@@ -259,3 +259,5 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/UWPMUC/Modul12/BlankPage1.xaml
+/UWPMUC/Modul12/BlankPage1.xaml.cs
